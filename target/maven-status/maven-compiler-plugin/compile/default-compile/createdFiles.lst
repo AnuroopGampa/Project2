@@ -1,0 +1,7 @@
+com\backend\DAO\BlogDAOImpl.class
+com\backend\config\DbConfig.class
+com\backend\DAO\BlogDAO.class
+com\backend\model\Forum.class
+com\backend\DAO\ForumDAOImpl.class
+com\backend\DAO\ForumDAO.class
+com\backend\model\Blog.class
