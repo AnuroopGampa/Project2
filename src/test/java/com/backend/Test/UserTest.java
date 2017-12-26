@@ -16,6 +16,7 @@ import com.backend.config.DbConfig;
 import com.backend.model.UserDetails;
 
 @ComponentScan("com.backend")
+@Ignore
 public class UserTest {
 
 	@Autowired

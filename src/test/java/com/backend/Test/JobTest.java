@@ -16,6 +16,7 @@ import com.backend.config.DbConfig;
 import com.backend.model.Job;
 
 @ComponentScan("com.backend")
+@Ignore
 public class JobTest {
 	@Autowired
 	private static JobDAO jobDAO;

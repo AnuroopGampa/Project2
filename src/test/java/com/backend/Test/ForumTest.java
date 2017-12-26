@@ -17,6 +17,7 @@ import com.backend.model.Forum;
 
 
 @ComponentScan("com.backend")
+@Ignore
 public class ForumTest {
 
 	@Autowired

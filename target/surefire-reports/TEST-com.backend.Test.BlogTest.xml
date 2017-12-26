@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="6" failures="0" name="com.backend.Test.BlogTest" time="1.038" errors="0" skipped="5">
+<testsuite tests="1" failures="0" name="com.backend.Test.BlogTest" time="10.363" errors="1" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_144\jre\bin"/>
     <property name="java.vm.version" value="25.144-b01"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
-    <property name="maven.multiModuleProjectDirectory" value="E:\workspace\SocialNetworkBackend"/>
+    <property name="maven.multiModuleProjectDirectory" value="C:\Users\kankaiiah\git\Project2"/>
     <property name="java.vendor.url" value="http://java.oracle.com/"/>
     <property name="path.separator" value=";"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
@@ -16,7 +16,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.os.patch.level" value=""/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="E:\workspace\SocialNetworkBackend"/>
+    <property name="user.dir" value="C:\Users\kankaiiah\git\Project2"/>
     <property name="java.runtime.version" value="1.8.0_144-b01"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
     <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.8.0_144\jre\lib\endorsed"/>
@@ -27,7 +27,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="user.variant" value=""/>
     <property name="os.name" value="Windows 8.1"/>
-    <property name="classworlds.conf" value="E:\workspace\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf4875459243060059930.tmp"/>
+    <property name="classworlds.conf" value="E:\workspace\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf1969132746694629248.tmp"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
     <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_144\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Program Files/Java/jdk1.8.0_144/bin/../jre/bin/server;C:/Program Files/Java/jdk1.8.0_144/bin/../jre/bin;C:/Program Files/Java/jdk1.8.0_144/bin/../jre/lib/amd64;C:\oraclexe\app\oracle\product\11.2.0\server\bin;;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\Program Files\apache-maven-3.3.9\bin;C:\Program Files\Java\jdk1.8.0_144\bin;C:\WINDOWS\system32\WindowsPowerShell\v1.0;C:\Program Files\apache-maven-3.3.9\bin;C:\Program Files\apache-maven-3.3.9\bin;;E:\Softwares\eclipse-jee-neon-2-win32-x86_64\eclipse;;."/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
@@ -53,7 +53,7 @@
     <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext;C:\Windows\Sun\Java\lib\ext"/>
     <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.8.0_144\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_144\jre\classes"/>
     <property name="java.vendor" value="Oracle Corporation"/>
-    <property name="maven.home" value="E:\workspace\SocialNetworkBackend\EMBEDDED"/>
+    <property name="maven.home" value="C:\Users\kankaiiah\git\Project2\EMBEDDED"/>
     <property name="file.separator" value="\"/>
     <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -61,20 +61,106 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="com.backend.Test.BlogTest" name="addBlogTest" time="0.173"/>
-  <testcase classname="com.backend.Test.BlogTest" name="getAllBlogTest" time="0.173">
-    <skipped/>
-  </testcase>
-  <testcase classname="com.backend.Test.BlogTest" name="updateBlogTest" time="0.173">
-    <skipped/>
-  </testcase>
-  <testcase classname="com.backend.Test.BlogTest" name="approveBlogTest" time="0.173">
-    <skipped/>
-  </testcase>
-  <testcase classname="com.backend.Test.BlogTest" name="getBlogTest" time="0.173">
-    <skipped/>
-  </testcase>
-  <testcase classname="com.backend.Test.BlogTest" name="deleteBlogTest" time="0.173">
-    <skipped/>
+  <testcase classname="com.backend.Test.BlogTest" name="com.backend.Test.BlogTest" time="10.363">
+    <error message="Error creating bean with name &apos;defaultServletHandlerMapping&apos; defined in class path resource [org/springframework/web/servlet/config/annotation/DelegatingWebMvcConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.web.servlet.HandlerMapping]: Factory method &apos;defaultServletHandlerMapping&apos; threw exception; nested exception is java.lang.IllegalArgumentException: A ServletContext is required to configure default servlet handling" type="org.springframework.beans.factory.BeanCreationException">org.springframework.beans.factory.BeanCreationException: Error creating bean with name &apos;defaultServletHandlerMapping&apos; defined in class path resource [org/springframework/web/servlet/config/annotation/DelegatingWebMvcConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.web.servlet.HandlerMapping]: Factory method &apos;defaultServletHandlerMapping&apos; threw exception; nested exception is java.lang.IllegalArgumentException: A ServletContext is required to configure default servlet handling
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1173)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1067)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:513)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543)
+	at com.backend.Test.BlogTest.initialize(BlogTest.java:33)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.web.servlet.HandlerMapping]: Factory method &apos;defaultServletHandlerMapping&apos; threw exception; nested exception is java.lang.IllegalArgumentException: A ServletContext is required to configure default servlet handling
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:189)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:588)
+	... 33 more
+Caused by: java.lang.IllegalArgumentException: A ServletContext is required to configure default servlet handling
+	at org.springframework.util.Assert.notNull(Assert.java:134)
+	at org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer.&lt;init&gt;(DefaultServletHandlerConfigurer.java:53)
+	at org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport.defaultServletHandlerMapping(WebMvcConfigurationSupport.java:497)
+	at org.springframework.web.servlet.config.annotation.DelegatingWebMvcConfiguration$$EnhancerBySpringCGLIB$$6c1aeb96.CGLIB$defaultServletHandlerMapping$27(&lt;generated&gt;)
+	at org.springframework.web.servlet.config.annotation.DelegatingWebMvcConfiguration$$EnhancerBySpringCGLIB$$6c1aeb96$$FastClassBySpringCGLIB$$5e183d9f.invoke(&lt;generated&gt;)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:358)
+	at org.springframework.web.servlet.config.annotation.DelegatingWebMvcConfiguration$$EnhancerBySpringCGLIB$$6c1aeb96.defaultServletHandlerMapping(&lt;generated&gt;)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:162)
+	... 34 more
+</error>
+    <system-out>DataBase is connected.........!
+Session is crated................!
+Blog DAO object Created
+Job object created
+Transaction is created............!
+Forum DAO object Created
+User object Created
+</system-out>
+    <system-err>Dec 06, 2017 3:04:48 PM org.springframework.context.annotation.AnnotationConfigApplicationContext prepareRefresh
+INFO: Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@721e0f4f: startup date [Wed Dec 06 15:04:48 IST 2017]; root of context hierarchy
+Dec 06, 2017 3:04:49 PM org.springframework.beans.factory.support.DefaultListableBeanFactory registerBeanDefinition
+INFO: Overriding bean definition for bean &apos;blogDAO&apos; with a different definition: replacing [Generic bean: class [com.backend.DAO.BlogDAOImpl]; scope=singleton; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [C:\Users\kankaiiah\git\Project2\target\classes\com\backend\DAO\BlogDAOImpl.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=dbConfig; factoryMethodName=getBlogDAO; initMethodName=null; destroyMethodName=(inferred); defined in com.backend.config.DbConfig]
+Dec 06, 2017 3:04:49 PM org.springframework.beans.factory.support.DefaultListableBeanFactory registerBeanDefinition
+INFO: Overriding bean definition for bean &apos;jobDAO&apos; with a different definition: replacing [Generic bean: class [com.backend.DAO.JobDAOImpl]; scope=singleton; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [C:\Users\kankaiiah\git\Project2\target\classes\com\backend\DAO\JobDAOImpl.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=dbConfig; factoryMethodName=getJobDAO; initMethodName=null; destroyMethodName=(inferred); defined in com.backend.config.DbConfig]
+Dec 06, 2017 3:04:50 PM org.springframework.jdbc.datasource.DriverManagerDataSource setDriverClassName
+INFO: Loaded JDBC driver: oracle.jdbc.driver.OracleDriver
+Dec 06, 2017 3:04:50 PM org.hibernate.Version logVersion
+INFO: HHH000412: Hibernate Core {5.0.1.Final}
+Dec 06, 2017 3:04:50 PM org.hibernate.cfg.Environment &lt;clinit&gt;
+INFO: HHH000206: hibernate.properties not found
+Dec 06, 2017 3:04:50 PM org.hibernate.cfg.Environment buildBytecodeProvider
+INFO: HHH000021: Bytecode provider name : javassist
+Dec 06, 2017 3:04:51 PM org.hibernate.annotations.common.reflection.java.JavaReflectionManager &lt;clinit&gt;
+INFO: HCANN000001: Hibernate Commons Annotations {5.0.0.Final}
+Dec 06, 2017 3:04:52 PM org.hibernate.dialect.Dialect &lt;init&gt;
+INFO: HHH000400: Using dialect: org.hibernate.dialect.OracleDialect
+Dec 06, 2017 3:04:52 PM org.hibernate.dialect.Oracle9Dialect &lt;init&gt;
+WARN: HHH000063: The Oracle9Dialect dialect has been deprecated; use either Oracle9iDialect or Oracle10gDialect instead
+Dec 06, 2017 3:04:52 PM org.hibernate.dialect.OracleDialect &lt;init&gt;
+WARN: HHH000064: The OracleDialect dialect has been deprecated; use Oracle8iDialect instead
+Dec 06, 2017 3:04:55 PM org.hibernate.tool.hbm2ddl.SchemaUpdate execute
+INFO: HHH000228: Running hbm2ddl schema update
+Dec 06, 2017 3:04:56 PM org.springframework.orm.hibernate5.HibernateTransactionManager afterPropertiesSet
+INFO: Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@4de4b452] of Hibernate SessionFactory for HibernateTransactionManager
+Dec 06, 2017 3:04:57 PM org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping register
+INFO: Mapped &quot;{[/getAllBlogs],methods=[GET]}&quot; onto public org.springframework.http.ResponseEntity&lt;java.util.ArrayList&lt;com.backend.model.Blog&gt;&gt; com.backend.restcontroller.BlogController.getAllBlogs()
+Dec 06, 2017 3:04:57 PM org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping register
+INFO: Mapped &quot;{[/deleteBlog],methods=[POST]}&quot; onto public org.springframework.http.ResponseEntity&lt;java.lang.String&gt; com.backend.restcontroller.BlogController.deleteBlog(com.backend.model.Blog)
+Dec 06, 2017 3:04:57 PM org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping register
+INFO: Mapped &quot;{[/updateBlog],methods=[POST]}&quot; onto public org.springframework.http.ResponseEntity&lt;java.lang.String&gt; com.backend.restcontroller.BlogController.updateBlog(com.backend.model.Blog)
+Dec 06, 2017 3:04:57 PM org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping register
+INFO: Mapped &quot;{[/insertBlog],methods=[POST]}&quot; onto public org.springframework.http.ResponseEntity&lt;java.lang.String&gt; com.backend.restcontroller.BlogController.insertBlog(com.backend.model.Blog)
+Dec 06, 2017 3:04:57 PM org.springframework.context.annotation.AnnotationConfigApplicationContext refresh
+WARNING: Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name &apos;defaultServletHandlerMapping&apos; defined in class path resource [org/springframework/web/servlet/config/annotation/DelegatingWebMvcConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.web.servlet.HandlerMapping]: Factory method &apos;defaultServletHandlerMapping&apos; threw exception; nested exception is java.lang.IllegalArgumentException: A ServletContext is required to configure default servlet handling
+</system-err>
   </testcase>
 </testsuite>
