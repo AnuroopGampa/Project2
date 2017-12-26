@@ -1,4 +1,5 @@
 com\backend\DAO\BlogDAOImpl.class
+com\backend\restcontroller\FriendController.class
 com\backend\DAO\UserDAO.class
 com\backend\DAO\JobDAO.class
 com\backend\DAO\JobDAOImpl.class
@@ -10,7 +11,12 @@ com\backend\restconfig\WebResolver.class
 com\backend\config\DbConfig.class
 com\backend\DAO\BlogDAO.class
 com\backend\model\Job.class
+com\backend\restcontroller\JobController.class
+com\backend\DAO\FriendDAO.class
 com\backend\model\Forum.class
 com\backend\restcontroller\BlogController.class
+com\backend\model\Friend.class
+com\backend\DAO\FriendDAOImpl.class
+com\backend\restcontroller\UserDetailController.class
 com\backend\DAO\ForumDAO.class
 com\backend\DAO\UserDAOImpl.class

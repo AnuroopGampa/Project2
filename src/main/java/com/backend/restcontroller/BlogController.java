@@ -17,6 +17,7 @@ import com.backend.model.Blog;
 
 @RestController
 public class BlogController {
+
 	@Autowired 
 	BlogDAO blogDAO;
 	
@@ -71,4 +72,4 @@ public class BlogController {
 		ArrayList listBlogs=(ArrayList)blogDAO.getAllBlogs();
 		return new ResponseEntity<ArrayList<Blog>>(listBlogs,HttpStatus.SERVICE_UNAVAILABLE);
 	}
-}
+	}

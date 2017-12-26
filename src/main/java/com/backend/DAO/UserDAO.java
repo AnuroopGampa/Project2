@@ -5,9 +5,23 @@ import java.util.List;
 import com.backend.model.UserDetails;
 
 public interface UserDAO {
-	public boolean addUserDetails(UserDetails user);
-	public boolean updateOnlineStatus(String status, UserDetails user);
-/*	public UserDetail getUserDetail(String username);*/
-	public List<UserDetails> getAllUserDetails();
-	public UserDetails getUserDetails(String username);
+	
+public boolean saveUser(UserDetails user);
+	
+	public boolean updateUser(UserDetails user);
+	
+	public boolean deleteUser(int id);
+	
+	public UserDetails getUserById(int userId);
+	
+	public UserDetails getUserByEmail(String email);
+	
+	public UserDetails getUserByName(String name);
+	
+	public List<UserDetails> getAllUsers();
+
+	public boolean checkIfExistingUser(UserDetails user);
+
+	public boolean checkIfValidUser(String username, String password);
+
 }

@@ -5,7 +5,8 @@ import java.util.List;
 import com.backend.model.Forum;
 
 public interface ForumDAO {
-public boolean addForum(Forum forum);
+    
+	public boolean addForum(Forum forum);
 	
 	public boolean updateForum(Forum forum);
 	

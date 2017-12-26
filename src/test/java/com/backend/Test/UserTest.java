@@ -19,46 +19,60 @@ import com.backend.model.UserDetails;
 @Ignore
 public class UserTest {
 
-	@Autowired
-	private static UserDAO  userDAO;
+
+static UserDAO  userDAO;
 	
 	@BeforeClass
 	public static void initialize()
 	{
 		AnnotationConfigApplicationContext context=new AnnotationConfigApplicationContext();
 		context.register(DbConfig.class);
-		context.scan("com.backend.*");
+		context.scan("com.backend");
 		context.refresh();
-
 		userDAO=(UserDAO)context.getBean("userDAO");
 	}
-	
-	
+	@Ignore
 	@Test
 	public void addUserTest()
 	{
 		UserDetails user=new UserDetails();
-		user.setUserdId(14);
-		user.setFirstName("Anuroop");
-		user.setLastName("Gampa");
-		user.setEmailId("anurop@gmail.com");
-		user.setPassword("12345");
-		user.setRole("User");
-		user.setStatus("P");
-		user.setIsOnine("O");
-		assertTrue("Problem in Inserting user", userDAO.addUserDetails(user));
-
+		user.setUser_Id(14);
+		user.setFirstName("John");
+		user.setLastName("abraham");
+		user.setEmail("john14@gmail.com");
+		user.setPassword("1230");
+		user.setRole("Admin");
+		
+		user.setOnline("N");
+		assertTrue("Problem in Inserting user", userDAO.saveUser(user));
 	}
-
-	@Ignore
 	@Test
-	public void getAllUserTest()
-	{
-		List<UserDetails> userList=(List<UserDetails>)userDAO.getAllUserDetails();
+	public void getAllUserTest(){
+		List<UsersDetails> userList=(List<UsersDetails>)userDAO.getAllUserDetails();
 		assertNotNull("Job list not found ",userList.get(0));
-		for(UserDetails user:userList)
+		for(UsersDetails user:userList)
 		{
 			System.out.println("EmailID:"+ user.getEmailId() + "Status:"+ user.getStatus());
 		}
 	}
+	@Ignore	
+		@Test
+		public void isOnlineTest()
+		{
+			UserDetails user=(UserDetails)userDAO.getUserByName("swetha");
+			assertTrue("Problem in updating",userDAO.updateOnlineStatus("N", user));
+		
+		
+		@Transactional
+		@Test
+		public void getUserDetailTest(){
+			UserDetail user=(UserDetails)userDAO.getUserDetails("swetha");
+			
+			System.out.println("UserFirstname:" + user.getFirstName());
+			System.out.println("UserRole:" + user.getRole());
+			
+			assertNotNull("UserDetail not found", user);
+		}
+	}
+	
 }

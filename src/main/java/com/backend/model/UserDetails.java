@@ -1,71 +1,124 @@
 package com.backend.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.Table;
 
+
+
 @Entity
-@Table
+@Table(name="UsersDetails")
 
 public class UserDetails {
 	
 		@Id
 		@GeneratedValue
-		private int UserdId;
-		private String FirstName;
-		private String LastName;
-		private String Password;
-		private String EmailId;
-		private String role;
-		private String status;
-		private String isOnine;
-		public int getUserdId() {
-			return UserdId;
+		int user_Id;
+		public int getUser_Id() {
+			return user_Id;
 		}
-		public void setUserdId(int userdId) {
-			UserdId = userdId;
+
+		public void setUser_Id(int user_Id) {
+			this.user_Id = user_Id;
 		}
+
 		public String getFirstName() {
-			return FirstName;
+			return firstName;
 		}
+
 		public void setFirstName(String firstName) {
-			FirstName = firstName;
+			this.firstName = firstName;
 		}
+
 		public String getLastName() {
-			return LastName;
+			return lastName;
 		}
+
 		public void setLastName(String lastName) {
-			LastName = lastName;
+			this.lastName = lastName;
 		}
+
+		public String getUserName() {
+			return userName;
+		}
+
+		public void setUserName(String userName) {
+			this.userName = userName;
+		}
+
+		public String getContact() {
+			return contact;
+		}
+
+		public void setContact(String contact) {
+			this.contact = contact;
+		}
+
+		public String getEmail() {
+			return email;
+		}
+
+		public void setEmail(String email) {
+			this.email = email;
+		}
+
 		public String getPassword() {
-			return Password;
+			return password;
 		}
+
 		public void setPassword(String password) {
-			Password = password;
+			this.password = password;
 		}
-		public String getEmailId() {
-			return EmailId;
-		}
-		public void setEmailId(String emailId) {
-			EmailId = emailId;
-		}
+
 		public String getRole() {
 			return role;
 		}
+
 		public void setRole(String role) {
 			this.role = role;
 		}
-		public String getStatus() {
-			return status;
+
+		public boolean isEnabled() {
+			return isEnabled;
 		}
-		public void setStatus(String status) {
-			this.status = status;
+
+		public void setEnabled(boolean isEnabled) {
+			this.isEnabled = isEnabled;
 		}
-		public String getIsOnine() {
-			return isOnine;
+
+		public boolean isOnline() {
+			return isOnline;
 		}
-		public void setIsOnine(String isOnine) {
-			this.isOnine = isOnine;
+
+		public void setOnline(boolean isOnline) {
+			this.isOnline = isOnline;
 		}
+
+		public byte[] getImage() {
+			return image;
+		}
+
+		public void setImage(byte[] image) {
+			this.image = image;
+		}
+
+		private String firstName;
+		private String lastName;
+		
+		@Column(unique=true,nullable=false)
+		private String userName;
+		private String contact;
+		
+		@Column(unique=true,nullable=false)
+		private String email;
+		private String password;
+		private String role;
+		private boolean isEnabled;
+		private boolean isOnline;
+		
+		@Lob
+		private byte[] image;
 }

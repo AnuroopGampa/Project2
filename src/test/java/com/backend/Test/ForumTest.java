@@ -20,81 +20,80 @@ import com.backend.model.Forum;
 @Ignore
 public class ForumTest {
 
-	@Autowired
-	private static ForumDAO  forumDAO;
 	
-	@SuppressWarnings("resource")
+static ForumDAO  forumDAO;
+	
 	@BeforeClass
 	public static void initialize()
 	{
 		AnnotationConfigApplicationContext context=new AnnotationConfigApplicationContext();
 		context.register(DbConfig.class);
-		context.scan("com.backend.*");
+		context.scan("com.backend");
 		context.refresh();
-		
-		forumDAO=(ForumDAO)context.getBean("forumDAO");
+
+		 forumDAO=(ForumDAO)context.getBean("forumDAO");
 	}
-	
+
 	@Ignore
 	@Test
-	public void addForumTest()
+	public void addTest()
 	{
 		Forum forum=new Forum();
-		//forum.setForumId(104);
-		forum.setForumName("Quora");
-		forum.setForumContent("Everthing You need");
-		forum.setUserId(8);
+		forum.setForumId(119);
+		forum.setForumName("SuggestForum");
+		forum.setForumContent("Get suggestions");
+		forum.setuserId(104);
 		forum.setStatus("A");
 		forum.setCreateDate(new java.util.Date());
 		
 		assertTrue("Problem in Inserting forum", forumDAO.addForum(forum));
 	}
-	
 	@Ignore
 	@Test
- 	public void getForumTest()
- 	{
- 		Forum forum=(Forum)forumDAO.getForum(3);
-		System.out.println("ForumName:" + forum.getForumName());
-		System.out.println("ForumContent:" + forum.getForumContent());
-		assertNotNull("forum not found", forum);
- 	}
+	public void updateForumTest()
+	{
+		Forum forum=(Forum)forumDAO.getForum(104);
+		forum.setForumName("JavaTpont");
+	    forum.setForumContent("Study site");
+		assertTrue("Problem in updating Forum",forumDAO.updateForum(forum));
+	}
 	
-	@Ignore
+@Ignore
 	@Test
- 	public void updateForumTest()
- 	{
-		Forum forum=(Forum)forumDAO.getForum(3);
-		forum.setForumName("StackOverflow");
- 		forum.setUserId(5);
- 		assertTrue("Problem in updating Forum",forumDAO.updateForum(forum));
- 	}
+	public void getForumTest(){
+
+		Forum forum=(Forum)forumDAO.getForum(115);
+		
+		System.out.println("Forum Name:" + forum.getForumName());
+		System.out.println("ForumContent:" +forum.getForumContent());
+		
+		assertNotNull("Forum not found", forum);
+	}
 	
-	@Ignore
+@Ignore
 	@Test
-	public void deleteForumTest()
- 	{
-		Forum forum=(Forum)forumDAO.getForum(3);
+	public void deleteForumTest(){
+		Forum forum=(Forum)forumDAO.getForum(104);
 		assertTrue("Problem in deletion",forumDAO.deleteForum(forum));
 	}
 	
 	@Ignore
 	@Test
-	public void approveForumTest()
-	{
-		Forum forum=(Forum)forumDAO.getForum(4);
+	public void approveForumTest(){
+		Forum forum=(Forum)forumDAO.getForum(115);
 		assertTrue("Problem in approving",forumDAO.approveForum(forum));
 	}
 	
-	@Ignore
 	@Test
-	public void getAllForumsTest()
-	{
+	public void getAllForumTest(){
 		List<Forum> forumList=(List<Forum>)forumDAO.getAllForums();
 		assertNotNull("Forum list not found ",forumList.get(0));
 		for(Forum forum:forumList)
 		{
-			System.out.println("ForumID:"+forum.getForumId() + "ForumName:"+forum.getForumName());
+			System.out.println("ForumID:"+ forum.getForumId() + "ForumName:"+ forum.getForumName());
 		}
 	}
-}
+		
+
+		
+	}

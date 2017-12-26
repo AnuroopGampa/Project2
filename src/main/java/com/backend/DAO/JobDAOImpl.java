@@ -74,4 +74,20 @@ public class JobDAOImpl implements JobDAO{
 		return job;
 	}
 
+	@Override
+	public boolean deleteJob(Job job) {
+		// TODO Auto-generated method stub
+	
+		try
+		{
+		sessionFactory.getCurrentSession().delete(job);
+		return true;
+		}
+		catch(Exception e)
+		{
+		System.out.println("Exception arised:"+e);
+		return false;
+		}
+	}
+
 }

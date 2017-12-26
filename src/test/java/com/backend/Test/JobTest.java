@@ -18,55 +18,53 @@ import com.backend.model.Job;
 @ComponentScan("com.backend")
 @Ignore
 public class JobTest {
-	@Autowired
-	private static JobDAO jobDAO;
+
+static JobDAO jobDAO;
 	
 	@BeforeClass
 	public static void initialize()
 	{
 		AnnotationConfigApplicationContext context=new AnnotationConfigApplicationContext();
 		context.register(DbConfig.class);
-		context.scan("com.backend.*");
+		context.scan("com.backend");
          context.refresh();
 		
 		jobDAO=(JobDAO)context.getBean("jobDAO");
 	}
 	
-	/*@Ignore*/
+@Ignore
 	@Test
-	public void addJobTest()
-	{
+	public void addJobTest(){
 		Job job=new Job();
-		//job.setJobId(12);
-		job.setJobProfile("Developer");
-		job.setJobDesc("Java Developer");
-		job.setQualification("B.TECH");
+		job.setJobId(12);
+		job.setJobProfile("Software");
+		job.setJobDesc("Process ASsociate");
+		job.setQualification("M.SC/M.E");
 		job.setStatus("Eligible");
 		job.setPostDate(new java.util.Date());
 		
 		assertTrue("Problems in Inserting Job",jobDAO.addJob(job));
 	}
 	
-	@Ignore
-	@Test
-	public void getAllJobTest()
-	{
-		List<Job> jobList=(List<Job>)jobDAO.getAllJobs();
-		assertNotNull("Job list not found ",jobList.get(0));
-		for(Job job:jobList)
-		{
-		System.out.println("JobID:"+ job.getJobId() + "JobProfile:"+ job.getJobProfile());
-		}
-	}
 
-	@Ignore
-	@Test
-	public void getJobTest()
+@Test
+public void getAllJobTest(){
+	List<Job> jobList=(List<Job>)jobDAO.getAllJobs();
+	assertNotNull("Job list not found ",jobList.get(0));
+	for(Job job:jobList)
 	{
-		Job job=(Job)jobDAO.getJob(8);
-	
-		System.out.println("JobProfile:" + job.getJobProfile());
-		System.out.println("JobDescription:" + job.getJobDesc());
-		assertNotNull("Job not found", job);
+		System.out.println("JobID:"+ job.getJobId() + "JobProfile:"+ job.getJobProfile());
 	}
+}
+@Test
+public void getJobTest(){
+
+	Job job=(Job)jobDAO.getJob(11);
+	
+	System.out.println("JobProfile:" + job.getJobProfile());
+	System.out.println("JobDescription:" + job.getJobDesc());
+	
+	assertNotNull("Job not found", job);
+}
+	
 }

@@ -1,4 +1,4 @@
-package com.backend.restconfig;
+/*package com.backend.restconfig;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
@@ -20,3 +20,4 @@ public class WebIntializer extends AbstractAnnotationConfigDispatcherServletInit
 		return new String[] {"/"};
 	}
 }
+*/

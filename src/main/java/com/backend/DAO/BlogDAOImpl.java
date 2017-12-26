@@ -25,8 +25,8 @@ public class BlogDAOImpl implements BlogDAO
 	}
 
 	@Transactional
-	public boolean addBlog(Blog blog) 
-	{
+	public boolean addBlog(Blog blog) {
+		// TODO Auto-generated method stub
 		try
 		{
 		sessionFactory.getCurrentSession().save(blog);
@@ -38,82 +38,128 @@ public class BlogDAOImpl implements BlogDAO
 		return false;
 		}
 	}
+
 	@Transactional
 	public boolean updateBlog(Blog blog) {
 		// TODO Auto-generated method stub
 		try
-		{
-		sessionFactory.getCurrentSession().saveOrUpdate(blog);
-		return true;
-		}
-		catch(Exception e)
-		{
-		System.out.println("Exception occured:"+e);
-		return false;
-		}	
+  		{
+ 		sessionFactory.getCurrentSession().update(blog);
+
+  		return true;
+  		}
+  		catch(Exception e)
+  		{
+
+ 		System.out.println("Exception occured:"+e);
+  		return false;
+  		}
 	}
+
 	@Transactional
 	public boolean deleteBlog(Blog blog) {
 		// TODO Auto-generated method stub
 		try
-		{
-		sessionFactory.getCurrentSession().delete(blog);
-		return true;
-		}
-		catch(Exception e)
-		{
-		System.out.println("Exception occured:"+e);
-		return false;
-		}	
+  		{
+ 		sessionFactory.getCurrentSession().update(blog);
+
+  		return true;
+  		}
+  		catch(Exception e)
+  		{
+
+ 		System.out.println("Exception occured:"+e);
+  		return false;
+  		}	
 	}
+
 	@Transactional
 	public Blog getBlog(int blogId) {
 		// TODO Auto-generated method stub
 		Session session=sessionFactory.openSession();
-		Blog blog=(Blog)session.get(Blog.class, blogId);
-		session.close();
-		return blog;
+	 	Blog blog=(Blog)session.get(Blog.class, blogId);
+			session.close();
+	 		return blog;
 	}
+
 	@Transactional
 	public List<Blog> getAllBlogs() {
 		// TODO Auto-generated method stub
 Session session=sessionFactory.openSession();
 		
-		List<Blog> blogList=(List<Blog>)session.createQuery("from Blog").list();
+		List<Blog> blogList=session.createQuery("from Blog where status != 'PENDING'").list();
 		session.close();
 		return blogList;
 	}
+
 	@Transactional
 	public boolean approveBlog(Blog blog) {
 		// TODO Auto-generated method stub
-		{
-			try{
-				blog.setStatus("A");
-				sessionFactory.getCurrentSession().saveOrUpdate(blog);
-				return true;
-				}
-				catch(Exception e)
-				{
-				System.out.println("Exception occured:"+e);
-				return false;
-				}	
-			}
+		try{
+			blog.setStatus("A");
+ 				sessionFactory.getCurrentSession().saveOrUpdate(blog);
+ 				return true;
+ 		}
+ 				catch(Exception e)
+ 				{
+ 				System.out.println("Exception occured:"+e);
+ 				return false;
+ 				}
 	}
+
 	@Transactional
 	public boolean rejectBlog(Blog blog) {
 		// TODO Auto-generated method stub
 		try{
 			blog.setStatus("N");
-			sessionFactory.getCurrentSession().update(blog);
-			return true;
-			}
-			catch(Exception e)
-			{
-			System.out.println("Exception occured:"+e);
-			return false;
-			}	
+ 				sessionFactory.getCurrentSession().saveOrUpdate(blog);
+ 				return true;
+ 		}
+ 				catch(Exception e)
+ 				{
+ 				System.out.println("Exception occured:"+e);
+ 				return false;
+ 				}
+	}
+
+	@Transactional
+	public List<Blog> getAllBlogs(int userId) {
+		// TODO Auto-generated method stub
+		Session session = sessionFactory.openSession();
 		
-	}	
+		List<Blog> blogList= session.createQuery("from Blog where userId = :userId")
+				.setParameter("userId", userId).list();
+		
+		session.close();
+		
+		return blogList;
+	}
+
+	@Transactional
+	public List<Blog> getAllPendingBlogs() {
+		// TODO Auto-generated method stub
+		Session session = sessionFactory.openSession();
+		
+		List<Blog> blogList= session.createQuery("from Blog where status = 'PENDING'").list();
+		
+		session.close();
+		
+		return blogList;
+	}
+
+	@Transactional
+	public List<Blog> getAllApprovedBlog() {
+		// TODO Auto-generated method stub
+		Session session = sessionFactory.openSession();
+		
+		List<Blog> blogList= session.createQuery("from Blog where status = 'APPROVED'").list();
+		
+		session.close();
+		
+		return blogList;
+	}
+
+	
 	}
 
 	

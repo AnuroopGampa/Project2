@@ -19,12 +19,18 @@ import com.backend.DAO.BlogDAO;
 import com.backend.DAO.BlogDAOImpl;
 import com.backend.DAO.ForumDAO;
 import com.backend.DAO.ForumDAOImpl;
+import com.backend.DAO.FriendDAO;
+import com.backend.DAO.FriendDAOImpl;
 import com.backend.DAO.JobDAO;
 import com.backend.DAO.JobDAOImpl;
 import com.backend.DAO.UserDAO;
 import com.backend.DAO.UserDAOImpl;
 import com.backend.model.Blog;
 import com.backend.model.Forum;
+import com.backend.model.Friend;
+import com.backend.model.Job;
+import com.backend.model.UserDetails;
+
 
 @Configuration
 @EnableTransactionManagement
@@ -61,6 +67,9 @@ public class DbConfig {
 	
 		sessionBuilder.addAnnotatedClasses(Blog.class);
 		sessionBuilder.addAnnotatedClasses(Forum.class);
+		sessionBuilder.addAnnotatedClasses(Friend.class);
+		sessionBuilder.addAnnotatedClasses(UserDetails.class);
+		sessionBuilder.addAnnotatedClasses(Job.class);
 		sessionBuilder.scanPackages("com.backend");
 		System.out.println("Session is crated................!");
 
@@ -105,6 +114,13 @@ public class DbConfig {
 	{
 		System.out.println("Job object created");
 		return new JobDAOImpl(sessionFactory);
+	}
+	@Autowired
+	@Bean(name="friendDAO")
+	public FriendDAO getFriendDAO(SessionFactory sessionFactory)
+	{
+		System.out.println("Friend DAO object Created");
+		return new FriendDAOImpl(sessionFactory);
 	}
 	
 }
